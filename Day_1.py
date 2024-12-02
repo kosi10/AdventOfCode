@@ -9,16 +9,16 @@ for line in lines:
     arr1.append(x[0])
     arr2.append(x[1])
 
-razlike = []
+razlikaKoncna = 0
 
 for i in range (len(lines)):
     min1 = min(arr1)
     min2 = min(arr2)
     arr1.remove(min1)
     arr2.remove(min2)
+    razlika = abs(int(min1) - int(min2))
+    razlikaKoncna += razlika
 
-    razlika = int(min2)-int(min1)
-    razlike.append(abs(razlika))
-print(razlike)
+print(razlikaKoncna)
 
 
