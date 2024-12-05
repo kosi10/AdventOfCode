@@ -1,4 +1,4 @@
-with open("arrays.txt") as file:
+with open("Day1/arrays.txt") as file:
     lines = [line.rstrip() for line in file]
 
 arr1 = []
