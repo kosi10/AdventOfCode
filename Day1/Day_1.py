@@ -20,5 +20,3 @@ for i in range (len(lines)):
     razlikaKoncna += razlika
 
 print(razlikaKoncna)
-
-
