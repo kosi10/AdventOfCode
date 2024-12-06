@@ -28,9 +28,6 @@ for line in lines:
                 last = int(num)
                 continue
             else:
-                if(first == 0):
-                    first = 1
-                    continue
                 #print("ni res")
                 a = False
                 break
