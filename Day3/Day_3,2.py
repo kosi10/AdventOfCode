@@ -5,22 +5,22 @@ with open("Day3/input.txt") as file:
 
 total = 0
 newString = ""
-
 arr = []
 
+#This part is important
 for line in lines:
+    newString+= line
 
-    split = re.split("do\(\)", line)
-    print(len(split))
+#splits the string after every do() so every new string starts as enabled
+split = re.split("do\(\)", newString)
 
-    for el in split:
+#there are no additional "do()" in the string so the string is enabled until the first "don't" is found
+for el in split:
 
-        #split2 = re.split("don\'t\(\)", el)
-        #arr.append(split2[0])
-        
-    break
+    split2 = re.split("don\'t\(\)", el)
+    arr.append(split2[0])
 
-'''
+# find the mul(x,y) sequence with regex
 for lin in arr:
     x = re.findall("mul\(\d{1,3}\,\d{1,3}\)", lin)
 
@@ -30,4 +30,3 @@ for lin in arr:
         total += multiply
 
 print(total)
-'''
