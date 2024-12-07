@@ -1,30 +1,19 @@
+import re
+
 with open("Day3/input.txt") as file:
     lines = file.readlines()
 
-#print(lines[0].find("mul"))
-print(lines[0].count("mul"))
+total = 0
 
-strBuilder = ""
-i = 0
+for line in lines:
 
-for letter in lines[0]:
-    if letter == "m" and strBuilder == "":
-        strBuilder += letter
-        print("m")
-        continue
-    elif letter == "u" and strBuilder == "m":
-        print("u")
-        strBuilder += letter
-    elif letter == "l" and strBuilder == "mu":
-        print("l")
-        strBuilder += letter
-    elif letter == "(" and strBuilder == "mul":
-        strBuilder += letter
-    elif letter.isdigit() and strBuilder == "mul(":
-        strBuilder += letter
-        print("digits")
+    x = re.findall("mul\(\d{1,3}\,\d{1,3}\)", line)
+    
 
+    for equation in x:
+        numbers = equation[4:-1].split(",")
+        multiply = int(numbers[0])*int(numbers[1])
+        print(multiply)
+        total += multiply
 
-a = "1"
-print(type(a))
-print(a.isdigit())
+print(total)
