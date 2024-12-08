@@ -23,7 +23,7 @@ for line in lines:
             last = int(num)
 
         else: # < za vse padajoce, > rastoce
-            if int(num) < int(last) and abs(int(num) - int(last)) < 4: 
+            if int(num) > int(last) and abs(int(num) - int(last)) < 4: 
                 print(num,last)
                 last = int(num)
                 continue
