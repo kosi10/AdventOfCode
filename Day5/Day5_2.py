@@ -1,6 +1,22 @@
 with open("Day5/input.txt") as file:
     lines = file.readlines()
 
+# in this function i get incorrect updates and i need to fix them, to help me start i have the leading number where it got wrong
+def fix(line,lead, problem):
+    counter = 0
+    for num in line:
+        if(num == lead):
+            break
+        counter += 1
+    
+    for num in line[counter:]:
+        print(counter)
+
+
+    print(line,lead,problem)
+    exit()
+
+
 # rules has rules, updates are ints in an array 
 rules = []
 updates = []
@@ -52,32 +68,11 @@ for update in updates:
                 found = False
                 break      
         if(found == False):
+           fix(update, num, test)
            break
     if(found):
         correct.append(update)
 
-#should be ok here, but double check the list is correct the other way around
-'''
-correct_final = []
-
-for update in correct:
-    line = update[::-1]
-    counter = 0 
-
-    for num in line[:-1]:
-        counter += 1
-        found = False
-        for test in line[counter:]:
-            if test in follow[num]:
-                found = True
-            else:
-                found = False
-                break
-        if(found == False):
-           break
-    if(found):
-        correct_final.append(line)
-'''
 totalSum = 0
 # in correct_final if double checking
 for line in correct:
