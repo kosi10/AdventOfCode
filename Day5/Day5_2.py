@@ -9,8 +9,24 @@ def fix(line,lead, problem):
             break
         counter += 1
     
+    index = 1
+    #zacne od indeksa pri katerem je problem
     for num in line[counter:]:
+        # preveri za vsako zacne od ene naprej od "lead"
+        for test in line[(counter + index):]:
+            #tu preveri ponovno pravilo
+            if test not in lead[num]:
+                #potem dam to stevko na zacetek ostale pred njo pomaknem v desno z arr.pop(x) in arr.insert(0,x)
+                print(test)
+            index += 1    
+
+
+
+
+
         print(counter)
+        index += 1
+
 
 
     print(line,lead,problem)
